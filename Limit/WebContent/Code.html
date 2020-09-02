@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function change() {
+	
+	var img=document.getElementById("check");
+	img.src="/Limit/CheckCodeServlet?time="+new Date().getTime();
+	//obj.src="/Limit/CheckCodeServlet";
+}
+
+</script>
+</head>
+<body>
+<form action="/Limit/RegistServlet">
+<img id="check" alt="验证码" src="/Limit/CheckCodeServlet" >
+<a style="font-size: 12px;color: blue" onclick="change()" >  看不清，换一张</a><br/>
+<input type="text" placeholder="请输入验证码~~~" name="code"><br>
+<input type="submit" value="提交"><br>
+</form>
+</body>
+</html>
